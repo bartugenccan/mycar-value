@@ -21,4 +21,7 @@ export class UsersController {
         return this.usersService.findOne(parseInt(id));
     }
 
+    @Get()
+    findAllUsers() { }
+
 }
