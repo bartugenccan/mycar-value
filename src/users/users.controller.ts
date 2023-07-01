@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param, Query, Delete, Patch } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Query, Delete, Patch, UseInterceptors, ClassSerializerInterceptor } from '@nestjs/common';
 
 // DTOS
 import { CreateUserDto } from './dtos/create-user.dto';
@@ -18,6 +18,7 @@ export class UsersController {
     }
 
     @Get('/:id')
+    @UseInterceptors(ClassSerializerInterceptor)
     findUser(@Param('id') id: string) {
         return this.usersService.findOne(parseInt(id));
     }
