@@ -7,6 +7,15 @@ Content-Type: application/json
     "password": "newuserpass"
 }
 
+### Sign in
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email": "newuser@new.com",
+    "password": "newuserpass"
+}
+
 ### Find a user by id
 GET http://localhost:3000/auth/4
 
